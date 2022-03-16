@@ -16,9 +16,7 @@
         <jsp:useBean id="mybean" scope="session" class="co.edu.unipiloto.hello.NameHandler"/>
         <jsp:useBean id="clock" scope="session" class="java.util.Date"/>
         <jsp:setProperty name="mybean" property="name"/>
-        <jsp:setProperty name="mybean" property="day"/>
-        <jsp:setProperty name="mybean" property="month"/>
-        <jsp:setProperty name="mybean" property="year"/>
+        <jsp:setProperty name="mybean" property="fechaDeNacimiento"/>
         
         <h1>
             <c:choose>

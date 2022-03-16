@@ -13,16 +13,12 @@ import java.util.Calendar;
 public class NameHandler {
     
     private String name;
-    private String day;
-    private String month;
-    private String year;
+    private Calendar fechaDeNacimiento;
     
     public NameHandler(){
         
         name = null;
-        day = null;
-        month = null;
-        year = null;
+        fechaDeNacimiento = Calendar.getInstance();
     }
 
     public String getName() {
@@ -33,25 +29,17 @@ public class NameHandler {
         this.name = name;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
+
+        String[] fdn = fechaDeNacimiento.split("-");
+        this.fechaDeNacimiento.set(Integer.parseInt(fdn[0]), Integer.parseInt(fdn[1])-1, Integer.parseInt(fdn[2]));
     }
 
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
     
     public String getEdad() {
         
         Calendar fechaActual = Calendar.getInstance();
-        Calendar fechaDeNacimiento = Calendar.getInstance();
         int edad;
-        
-        fechaDeNacimiento.set(Integer.parseInt(year), Integer.parseInt(month) - 1, Integer.parseInt(day));
         
         edad = (int) ((fechaActual.getTimeInMillis() - fechaDeNacimiento.getTimeInMillis())/1000/60/60/24/365);
         return edad + "";

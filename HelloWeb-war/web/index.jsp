@@ -15,11 +15,9 @@
         <form name="Formato de entrada" action="response.jsp">
             <h1>Ingrese su nombre</h1>
             <input type="text" name="name"/>
-            <h1>Ingrese su fecha de nacimiento (dd/mm/yyyy)</h1>
-            <input type="text" name="day" size="5"/>
-            <input type="text" name="month" size="5" />
-            <input type="text" name="year" size="5" />
-            <input type="submit" value="ok" />
+            <h1>Ingrese su fecha de nacimiento</h1>
+            <input type="date" name="fechaDeNacimiento"/>
+            <input type="submit" value="Ok" />
         </form>
     </body>
 </html>
